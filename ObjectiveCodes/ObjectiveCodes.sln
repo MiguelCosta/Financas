@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectiveCodes", "ObjectiveCodes\ObjectiveCodes.csproj", "{DFBB0FC6-9B79-48C6-BB31-7FE0F9C6848B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{839701D4-BC1F-4334-AD05-1841089D1BAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFBB0FC6-9B79-48C6-BB31-7FE0F9C6848B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFBB0FC6-9B79-48C6-BB31-7FE0F9C6848B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFBB0FC6-9B79-48C6-BB31-7FE0F9C6848B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFBB0FC6-9B79-48C6-BB31-7FE0F9C6848B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{839701D4-BC1F-4334-AD05-1841089D1BAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{839701D4-BC1F-4334-AD05-1841089D1BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{839701D4-BC1F-4334-AD05-1841089D1BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{839701D4-BC1F-4334-AD05-1841089D1BAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
