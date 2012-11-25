@@ -21,10 +21,10 @@ namespace ObjectiveCodes
         private const int pesquisaLinhasDepois = 30;
         private const int pesquisaLinhasAntes = 10;
 
-        private List<DataGridViewRow> _resultado = new List<DataGridViewRow>(45000);
+        private List<DataGridViewRow> _resultado = new List<DataGridViewRow>(65000);
         private List<DataGridViewRow> _resultadoWarning = new List<DataGridViewRow>(1000);
         private List<DataGridViewRow> _resultadoRemover = new List<DataGridViewRow>(1000);
-        private List<DataGridViewRow> _resultadoFinal = new List<DataGridViewRow>(45000);
+        private List<DataGridViewRow> _resultadoFinal = new List<DataGridViewRow>(65000);
 
         #region "form"
 
@@ -35,14 +35,17 @@ namespace ObjectiveCodes
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-
-
         }
 
         #endregion
 
         #region "Menu"
 
+        /// <summary>
+        /// Evento para abrir um ficheiro e carrega-lo no interface
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void abrirFicheirocsvToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -74,6 +77,11 @@ namespace ObjectiveCodes
             }
         }
 
+        /// <summary>
+        /// Evento para fechar a aplicação
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -144,6 +152,120 @@ namespace ObjectiveCodes
             }
         }
 
+        /// <summary>
+        /// Este método é o que vai pegar nos dados e vai colocar em memória
+        /// várias listas com as linhas analisadas.
+        /// </summary>
+        private void analisa()
+        {
+            object[] buffer = new object[7];                // buffer usado para criar uma linha analisada
+            DataGridViewRow rowNew = new DataGridViewRow(); // variável que vai ser usada para criar uma nova linha analiasada
+
+            try
+            {
+
+                Cursor = Cursors.WaitCursor;               
+                limpar(false);                              // limpa todas as grelhas excepto a grelha dos dados
+
+                int rowCount = dgvDados.Rows.Count;         // número total de linhas que vai ter de percorrer
+
+                lblProgresso.Visible = true;                // código usado apenas para o interface mostra o progresso
+                lblProgressoCount.Visible = true;
+                pgbAnalise.Visible = true;
+                pgbAnalise.Value = 0;
+                pgbAnalise.Maximum = rowCount;
+                lblProgresso.Text = "Passo 1 de 5";
+                lblProgressoCount.Text = "0 de " + rowCount;
+
+
+                List<DataGridViewRow> linhas = new List<DataGridViewRow>(); // variável que vai ter todas as linhas dos dados
+                foreach (DataGridViewRow row in dgvDados.Rows)
+                {
+                    linhas.Add(row);
+                }
+
+
+                foreach (DataGridViewRow row in dgvDados.Rows)  // ciclo para percorrer todas as linhas e comparar com as restantes
+                {
+                    rowNew = new DataGridViewRow();
+
+                    // lista que vai conter todos os fundos com ID igual ao da linha que está a ser analisada
+                    // mas que tem um código diferente
+                    var codigoDiferente = (from linha in linhas
+                                           where linha.Index < row.Index + pesquisaLinhasDepois
+                                                 && linha.Index > row.Index - pesquisaLinhasAntes
+                                                 && row.Cells[0].Value.Equals(linha.Cells[0].Value)
+                                                 && row.Cells[4].Value != null
+                                                 && !row.Cells[4].Value.Equals(linha.Cells[4].Value)
+                                           select linha).ToList();  
+
+                    // lista que vai ter todos os fundos com ID igual ao da linha que está a ser analisada
+                    // mas que não tem código
+                    var campoVazio = (from linha2 in linhas
+                                      where linha2.Index < row.Index + pesquisaLinhasDepois
+                                            && linha2.Index > row.Index - pesquisaLinhasAntes
+                                            && row.Cells[0].Value.Equals(linha2.Cells[0].Value)
+                                            && (linha2.Cells[4].Value == null
+                                            || linha2.Cells[4].Value.Equals(""))
+                                      select linha2).ToList();
+
+                    // preencher o buffer para depois criar uma linha
+                    buffer[0] = (string)row.Cells[dgvDados_KYCRSPFUNDNO.Index].Value;
+                    buffer[1] = (string)row.Cells[dgvDados_FSTYBEGDT.Index].Value;
+                    buffer[2] = (string)row.Cells[dgvDados_FSTYENDDT.Index].Value;
+                    buffer[3] = (string)row.Cells[dgvDados_LIPPERCLASS.Index].Value;
+                    buffer[4] = (string)row.Cells[dgvDados_LIPPEROBJCD.Index].Value;
+
+                    // se houver fundos com o mesmo ID mas com código diferente marca a linha como ser para remover
+                    if (codigoDiferente.Count > 0) buffer[indice_remover] = true; else buffer[indice_remover] = false;
+                    // se houver fundos com o mesmo ID mas que não tem código, marca a linha com warning
+                    if (campoVazio.Count > 0) buffer[indice_warning] = true; else buffer[indice_warning] = false;
+
+                    rowNew.CreateCells(dgvResultado, buffer);
+                    _resultado.Add(rowNew);
+
+                    if (codigoDiferente.Count > 0)
+                    {
+                        rowNew = new DataGridViewRow();
+                        rowNew.CreateCells(dgvResultado, buffer);
+                        _resultadoRemover.Add(rowNew);
+                    }
+                    if (campoVazio.Count > 0)
+                    {
+                        rowNew = new DataGridViewRow();
+                        rowNew.CreateCells(dgvResultado, buffer);
+                        _resultadoWarning.Add(rowNew);
+                    }
+
+                    if (!(codigoDiferente.Count > 0) && !(campoVazio.Count > 0))
+                    {
+                        rowNew = new DataGridViewRow();
+                        rowNew.CreateCells(dgvResultado, buffer);
+                        _resultadoFinal.Add(rowNew);
+                    }
+
+                    lblProgressoCount.Text = (row.Index+1) + " de " + rowCount;
+                    pgbAnalise.Value = row.Index + 1;
+                    
+                    Application.DoEvents();
+                }
+
+                // preencher as grelhas
+                preencherResultados();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro a analisar o ficheiro.\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
+            }
+        }
+
+        /// <summary>
+        /// Método que vai pegar nas listas depois da análise e preencher o interface
+        /// </summary>
         private void preencherResultados()
         {
             try
@@ -212,107 +334,6 @@ namespace ObjectiveCodes
 
             }
 
-        }
-
-        private void analisa()
-        {
-            object[] buffer = new object[7];
-            DataGridViewRow rowNew = new DataGridViewRow();
-
-            try
-            {
-                Cursor = Cursors.WaitCursor;
-
-                limpar(false);
-
-                lblProgresso.Visible = true;
-                lblProgressoCount.Visible = true;
-                pgbAnalise.Visible = true;
-
-                int rowCount = dgvDados.Rows.Count;
-                pgbAnalise.Value = 0;
-                pgbAnalise.Maximum = rowCount;
-
-                lblProgresso.Text = "Passo 1 de 5";
-                lblProgressoCount.Text = "0 de " + rowCount;
-
-                List<DataGridViewRow> linhas = new List<DataGridViewRow>();
-
-                foreach (DataGridViewRow row in dgvDados.Rows)
-                {
-                    linhas.Add(row);
-                }
-
-                foreach (DataGridViewRow row in dgvDados.Rows)
-                {
-                    rowNew = new DataGridViewRow();
-
-                    var codigoDiferente = (from linha in linhas
-                                           where linha.Index < row.Index + pesquisaLinhasDepois
-                                                 && linha.Index > row.Index - pesquisaLinhasAntes
-                                                 && row.Cells[0].Value.Equals(linha.Cells[0].Value)
-                                                 && row.Cells[4].Value != null
-                                                 && !row.Cells[4].Value.Equals(linha.Cells[4].Value)
-                                                 
-                                           select linha).ToList();
-
-                    var campoVazio = (from linha2 in linhas
-                                      where linha2.Index < row.Index + pesquisaLinhasDepois
-                                            && linha2.Index > row.Index - pesquisaLinhasAntes
-                                            && row.Cells[0].Value.Equals(linha2.Cells[0].Value)
-                                            && (linha2.Cells[4].Value == null
-                                            || linha2.Cells[4].Value.Equals(""))
-                                      select linha2).ToList();
-
-                    buffer[0] = (string)row.Cells[dgvDados_KYCRSPFUNDNO.Index].Value;
-                    buffer[1] = (string)row.Cells[dgvDados_FSTYBEGDT.Index].Value;
-                    buffer[2] = (string)row.Cells[dgvDados_FSTYENDDT.Index].Value;
-                    buffer[3] = (string)row.Cells[dgvDados_LIPPERCLASS.Index].Value;
-                    buffer[4] = (string)row.Cells[dgvDados_LIPPEROBJCD.Index].Value;
-
-                    if (codigoDiferente.Count > 0) buffer[indice_remover] = true; else buffer[indice_remover] = false;
-                    if (campoVazio.Count > 0) buffer[indice_warning] = true; else buffer[indice_warning] = false;
-
-                    rowNew.CreateCells(dgvResultado, buffer);
-
-                    _resultado.Add(rowNew);
-
-                    if (codigoDiferente.Count > 0)
-                    {
-                        rowNew = new DataGridViewRow();
-                        rowNew.CreateCells(dgvResultado, buffer);
-                        _resultadoRemover.Add(rowNew);
-                    }
-                    if (campoVazio.Count > 0)
-                    {
-                        rowNew = new DataGridViewRow();
-                        rowNew.CreateCells(dgvResultado, buffer);
-                        _resultadoWarning.Add(rowNew);
-                    }
-
-                    if (!(codigoDiferente.Count > 0) && !(campoVazio.Count > 0))
-                    {
-                        rowNew = new DataGridViewRow();
-                        rowNew.CreateCells(dgvResultado, buffer);
-                        _resultadoFinal.Add(rowNew);
-                    }
-
-                    lblProgressoCount.Text = (row.Index+1) + " de " + rowCount;
-                    pgbAnalise.Value = row.Index + 1;
-                    
-                    Application.DoEvents();
-                }
-
-                preencherResultados();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro a analisar o ficheiro.\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                Cursor = Cursors.Default;
-            }
         }
 
         private void limpar(bool grelhaDados)
