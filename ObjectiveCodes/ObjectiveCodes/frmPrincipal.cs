@@ -36,9 +36,6 @@ namespace ObjectiveCodes
         private const int indice_warning = 5;
         private const int indice_remover = 6;
 
-        private const int pesquisaLinhasDepois = 30;
-        private const int pesquisaLinhasAntes = 10;
-
         private List<DataGridViewRow> _resultado = new List<DataGridViewRow>(65000);
         private List<DataGridViewRow> _resultadoWarning = new List<DataGridViewRow>(1000);
         private List<DataGridViewRow> _resultadoRemover = new List<DataGridViewRow>(1000);
@@ -187,7 +184,7 @@ namespace ObjectiveCodes
                     // lista que vai conter todos os fundos com ID igual ao da linha que está a ser analisada
                     // mas que tem um código diferente
                     var codigoDiferente = (from linha in linhas
-                                           where linha.Index > row.Index - pesquisaLinhasAntes
+                                           where linha.Index > row.Index
                                                  && row.Cells[0].Value.Equals(linha.Cells[0].Value)
                                                  && row.Cells[4].Value != null
                                                  && !row.Cells[4].Value.Equals(linha.Cells[4].Value)
@@ -201,6 +198,19 @@ namespace ObjectiveCodes
                                             || linha2.Cells[4].Value.Equals(""))
                                       select linha2).ToList();
 
+                    // lista que vai verificar se existem fundos repetidos para manter apenas um deles
+                    // o que mantém vai ser o primeiro que aparece
+                    var repetidos = (from linha3 in linhas
+                                           where row.Index > linha3.Index // condição necessária para não remover a 1ª vez que o fundo aparece
+                                           && row.Cells[3].Value != null
+                                           && row.Cells[4].Value != null
+                                           && row.Cells[0].Value.Equals(linha3.Cells[0].Value)
+                                           && row.Cells[1].Value.Equals(linha3.Cells[1].Value)
+                                           && row.Cells[2].Value.Equals(linha3.Cells[2].Value)
+                                           && row.Cells[3].Value.Equals(linha3.Cells[3].Value)
+                                           && row.Cells[4].Value.Equals(linha3.Cells[4].Value)
+                                           select linha3).ToList();
+
                     // preencher o buffer para depois criar uma linha
                     buffer[0] = (string)row.Cells[dgvDados_KYCRSPFUNDNO.Index].Value;
                     buffer[1] = (string)row.Cells[dgvDados_FSTYBEGDT.Index].Value;
@@ -212,11 +222,13 @@ namespace ObjectiveCodes
                     if (codigoDiferente.Count > 0) buffer[indice_remover] = true; else buffer[indice_remover] = false;
                     // se houver fundos com o mesmo ID mas que não tem código, marca a linha com warning
                     if (campoVazio.Count > 0) buffer[indice_warning] = true; else buffer[indice_warning] = false;
+                    // se for repetido é para remover
+                    if (repetidos.Count > 0) buffer[indice_remover] = true;
 
                     rowNew.CreateCells(dgvResultado, buffer);
                     _resultado.Add(rowNew);
 
-                    if (codigoDiferente.Count > 0)
+                    if (codigoDiferente.Count > 0 || repetidos.Count > 0)
                     {
                         rowNew = new DataGridViewRow();
                         rowNew.CreateCells(dgvResultado, buffer);
@@ -229,7 +241,7 @@ namespace ObjectiveCodes
                         _resultadoWarning.Add(rowNew);
                     }
 
-                    if (!(codigoDiferente.Count > 0) && !(campoVazio.Count > 0))
+                    if (!(codigoDiferente.Count > 0) && !(campoVazio.Count > 0) && !(repetidos.Count > 0))
                     {
                         rowNew = new DataGridViewRow();
                         rowNew.CreateCells(dgvResultado, buffer);
@@ -438,7 +450,7 @@ namespace ObjectiveCodes
 
         private void analisaFOD()
         {
-            object[] buffer = new object[6];                // buffer usado para criar uma linha analisada
+            object[] buffer = new object[7];                // buffer usado para criar uma linha analisada
             DataGridViewRow rowNew = new DataGridViewRow(); // variável que vai ser usada para criar uma nova linha analiasada
 
             try
@@ -469,25 +481,26 @@ namespace ObjectiveCodes
                 {
                     rowNew = new DataGridViewRow();
 
-                    var dataDiferente = (from linha in linhas
-                                         where !String.IsNullOrEmpty((string)row.Cells[3].Value)
-                                            && row.Cells[1].Value.Equals(linha.Cells[1].Value)
-                                            && !row.Cells[3].Value.Equals(linha.Cells[3].Value)
-                                            && eDepois((string)row.Cells[3].Value, (string)linha.Cells[3].Value)
-                                         select linha).ToList();
+                    var dataNula = (from linha in linhas
+                                    where !row.Cells[0].Value.Equals(linha.Cells[0].Value)
+                                          && row.Cells[1].Value.Equals(linha.Cells[1].Value)
+                                          && String.IsNullOrEmpty((string)row.Cells[3].Value)
+                                          && eDepois((string)row.Cells[4].Value, (string)linha.Cells[4].Value)
+                                    select linha).ToList();
 
                     // preencher o buffer para depois criar uma linha
                     buffer[0] = (string)row.Cells[0].Value;
                     buffer[1] = (string)row.Cells[1].Value;
                     buffer[2] = (string)row.Cells[2].Value;
                     buffer[3] = (string)row.Cells[3].Value;
-                    buffer[4] = false;
+                    buffer[4] = (string)row.Cells[4].Value;
                     buffer[5] = false;
+                    buffer[6] = false;
 
-                    if (dataDiferente.Count > 0)
+                    if (dataNula.Count > 0)
                     {
-                        buffer[4] = true;
                         buffer[5] = true;
+                        buffer[6] = true;
                         rowNew = new DataGridViewRow();
                         rowNew.CreateCells(dgvResultadoFOD, buffer);
                         _resultadoRemoverFOD.Add(rowNew);
@@ -505,6 +518,7 @@ namespace ObjectiveCodes
 
                     lblProgressoCountFOD.Text = (row.Index + 1) + " de " + rowCount;
                     pgbAnaliseFOD.Value = row.Index + 1;
+
 
                     Application.DoEvents();
                 }
@@ -524,7 +538,9 @@ namespace ObjectiveCodes
 
         private bool eDepois(string data1, string data2)
         {
-            if (data1 == null || data2 == null) return false;
+            if (String.IsNullOrEmpty(data1) && !String.IsNullOrEmpty(data2)) return true;
+            if (!String.IsNullOrEmpty(data1) && String.IsNullOrEmpty(data2)) return false;
+            if (String.IsNullOrEmpty(data1) && String.IsNullOrEmpty(data2)) return true;
 
             int ano = Convert.ToInt32(data1.Substring(6, 4));
             int mes = Convert.ToInt32(data1.Substring(3, 2));

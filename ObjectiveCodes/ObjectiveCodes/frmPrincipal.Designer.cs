@@ -85,10 +85,6 @@
             this.tbcFirstOfferDate = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvDadosFOD = new System.Windows.Forms.DataGridView();
-            this.dgvDadosFOD_KYCRSPFUNDNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDadosFOD_FFUNDNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDadosFOD_Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDadosFOD_FFIRSTOFFERDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblProgressoFOD = new System.Windows.Forms.Label();
             this.pgbAnaliseFOD = new System.Windows.Forms.ProgressBar();
             this.lblProgressoCountFOD = new System.Windows.Forms.Label();
@@ -97,31 +93,39 @@
             this.btnAbrirFicheiroFOD = new System.Windows.Forms.Button();
             this.tbpResultadoFOD = new System.Windows.Forms.TabPage();
             this.dgvResultadoFOD = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvRemovidoFOD = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dgvResultadoFinalFOD = new System.Windows.Forms.DataGridView();
+            this.tbcGeral = new System.Windows.Forms.TabControl();
+            this.tbpObjectiveCodes = new System.Windows.Forms.TabPage();
+            this.tbpFirstOfferDate = new System.Windows.Forms.TabPage();
+            this.dgvDadosFOD_KYCRSPFUNDNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDadosFOD_FFUNDNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDadosFOD_Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDadosFOD_FFIRSTOFFERDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDadosFOD_FMFSTDAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvResultadoFOD_Warning = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dgvResultadoFOD_Remover = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgvRemovidoFOD = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dgvResultadoFinalFOD = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn10 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tbcGeral = new System.Windows.Forms.TabControl();
-            this.tbpObjectiveCodes = new System.Windows.Forms.TabPage();
-            this.tbpFirstOfferDate = new System.Windows.Forms.TabPage();
             this.toolStrip1.SuspendLayout();
             this.tbcCSV.SuspendLayout();
             this.tbpDados.SuspendLayout();
@@ -689,37 +693,14 @@
             this.dgvDadosFOD_KYCRSPFUNDNO,
             this.dgvDadosFOD_FFUNDNAME,
             this.dgvDadosFOD_Class,
-            this.dgvDadosFOD_FFIRSTOFFERDT});
+            this.dgvDadosFOD_FFIRSTOFFERDT,
+            this.dgvDadosFOD_FMFSTDAT});
             this.dgvDadosFOD.Location = new System.Drawing.Point(6, 6);
             this.dgvDadosFOD.Name = "dgvDadosFOD";
             this.dgvDadosFOD.RowHeadersVisible = false;
             this.dgvDadosFOD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDadosFOD.Size = new System.Drawing.Size(651, 285);
             this.dgvDadosFOD.TabIndex = 14;
-            // 
-            // dgvDadosFOD_KYCRSPFUNDNO
-            // 
-            this.dgvDadosFOD_KYCRSPFUNDNO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvDadosFOD_KYCRSPFUNDNO.HeaderText = "KYCRSP FUNDNO";
-            this.dgvDadosFOD_KYCRSPFUNDNO.Name = "dgvDadosFOD_KYCRSPFUNDNO";
-            // 
-            // dgvDadosFOD_FFUNDNAME
-            // 
-            this.dgvDadosFOD_FFUNDNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvDadosFOD_FFUNDNAME.HeaderText = "FFUND_NAME";
-            this.dgvDadosFOD_FFUNDNAME.Name = "dgvDadosFOD_FFUNDNAME";
-            // 
-            // dgvDadosFOD_Class
-            // 
-            this.dgvDadosFOD_Class.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvDadosFOD_Class.HeaderText = "";
-            this.dgvDadosFOD_Class.Name = "dgvDadosFOD_Class";
-            // 
-            // dgvDadosFOD_FFIRSTOFFERDT
-            // 
-            this.dgvDadosFOD_FFIRSTOFFERDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvDadosFOD_FFIRSTOFFERDT.HeaderText = "FFIRST OFFER DT";
-            this.dgvDadosFOD_FFIRSTOFFERDT.Name = "dgvDadosFOD_FFIRSTOFFERDT";
             // 
             // lblProgressoFOD
             // 
@@ -818,6 +799,7 @@
             this.dataGridViewTextBoxColumn17,
             this.dataGridViewTextBoxColumn18,
             this.dataGridViewTextBoxColumn19,
+            this.Column1,
             this.dgvResultadoFOD_Warning,
             this.dgvResultadoFOD_Remover});
             this.dgvResultadoFOD.Location = new System.Drawing.Point(3, 6);
@@ -826,48 +808,6 @@
             this.dgvResultadoFOD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResultadoFOD.Size = new System.Drawing.Size(654, 342);
             this.dgvResultadoFOD.TabIndex = 15;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn16.HeaderText = "KYCRSP FUNDNO";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn17.HeaderText = "FFUND_NAME";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn18.HeaderText = "";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn19.HeaderText = "FFIRST OFFER DT";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            // 
-            // dgvResultadoFOD_Warning
-            // 
-            this.dgvResultadoFOD_Warning.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dgvResultadoFOD_Warning.HeaderText = "Warning";
-            this.dgvResultadoFOD_Warning.Name = "dgvResultadoFOD_Warning";
-            this.dgvResultadoFOD_Warning.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvResultadoFOD_Warning.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dgvResultadoFOD_Warning.Visible = false;
-            // 
-            // dgvResultadoFOD_Remover
-            // 
-            this.dgvResultadoFOD_Remover.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dgvResultadoFOD_Remover.HeaderText = "Removido";
-            this.dgvResultadoFOD_Remover.Name = "dgvResultadoFOD_Remover";
-            this.dgvResultadoFOD_Remover.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvResultadoFOD_Remover.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dgvResultadoFOD_Remover.Width = 80;
             // 
             // tabPage2
             // 
@@ -895,6 +835,7 @@
             this.dataGridViewTextBoxColumn21,
             this.dataGridViewTextBoxColumn22,
             this.dataGridViewTextBoxColumn23,
+            this.Column2,
             this.dataGridViewCheckBoxColumn7,
             this.dataGridViewCheckBoxColumn8});
             this.dgvRemovidoFOD.Location = new System.Drawing.Point(4, 6);
@@ -903,48 +844,6 @@
             this.dgvRemovidoFOD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRemovidoFOD.Size = new System.Drawing.Size(654, 342);
             this.dgvRemovidoFOD.TabIndex = 16;
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn20.HeaderText = "KYCRSP FUNDNO";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn21.HeaderText = "FFUND_NAME";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn22.HeaderText = "";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn23.HeaderText = "FFIRST OFFER DT";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            // 
-            // dataGridViewCheckBoxColumn7
-            // 
-            this.dataGridViewCheckBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dataGridViewCheckBoxColumn7.HeaderText = "Warning";
-            this.dataGridViewCheckBoxColumn7.Name = "dataGridViewCheckBoxColumn7";
-            this.dataGridViewCheckBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn7.Visible = false;
-            // 
-            // dataGridViewCheckBoxColumn8
-            // 
-            this.dataGridViewCheckBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dataGridViewCheckBoxColumn8.HeaderText = "Removido";
-            this.dataGridViewCheckBoxColumn8.Name = "dataGridViewCheckBoxColumn8";
-            this.dataGridViewCheckBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn8.Width = 80;
             // 
             // tabPage3
             // 
@@ -972,6 +871,7 @@
             this.dataGridViewTextBoxColumn25,
             this.dataGridViewTextBoxColumn26,
             this.dataGridViewTextBoxColumn27,
+            this.Column3,
             this.dataGridViewCheckBoxColumn9,
             this.dataGridViewCheckBoxColumn10});
             this.dgvResultadoFinalFOD.Location = new System.Drawing.Point(4, 6);
@@ -980,48 +880,6 @@
             this.dgvResultadoFinalFOD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResultadoFinalFOD.Size = new System.Drawing.Size(654, 342);
             this.dgvResultadoFinalFOD.TabIndex = 17;
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn24.HeaderText = "KYCRSP FUNDNO";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn25.HeaderText = "FFUND_NAME";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            // 
-            // dataGridViewTextBoxColumn26
-            // 
-            this.dataGridViewTextBoxColumn26.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn26.HeaderText = "";
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            // 
-            // dataGridViewTextBoxColumn27
-            // 
-            this.dataGridViewTextBoxColumn27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn27.HeaderText = "FFIRST OFFER DT";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            // 
-            // dataGridViewCheckBoxColumn9
-            // 
-            this.dataGridViewCheckBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dataGridViewCheckBoxColumn9.HeaderText = "Warning";
-            this.dataGridViewCheckBoxColumn9.Name = "dataGridViewCheckBoxColumn9";
-            this.dataGridViewCheckBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn9.Visible = false;
-            // 
-            // dataGridViewCheckBoxColumn10
-            // 
-            this.dataGridViewCheckBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.dataGridViewCheckBoxColumn10.HeaderText = "Removido";
-            this.dataGridViewCheckBoxColumn10.Name = "dataGridViewCheckBoxColumn10";
-            this.dataGridViewCheckBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewCheckBoxColumn10.Width = 80;
             // 
             // tbcGeral
             // 
@@ -1056,6 +914,180 @@
             this.tbpFirstOfferDate.Size = new System.Drawing.Size(677, 386);
             this.tbpFirstOfferDate.TabIndex = 1;
             this.tbpFirstOfferDate.Text = "First Offer Date";
+            // 
+            // dgvDadosFOD_KYCRSPFUNDNO
+            // 
+            this.dgvDadosFOD_KYCRSPFUNDNO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvDadosFOD_KYCRSPFUNDNO.HeaderText = "KYCRSP FUNDNO";
+            this.dgvDadosFOD_KYCRSPFUNDNO.Name = "dgvDadosFOD_KYCRSPFUNDNO";
+            // 
+            // dgvDadosFOD_FFUNDNAME
+            // 
+            this.dgvDadosFOD_FFUNDNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvDadosFOD_FFUNDNAME.HeaderText = "FFUND_NAME";
+            this.dgvDadosFOD_FFUNDNAME.Name = "dgvDadosFOD_FFUNDNAME";
+            // 
+            // dgvDadosFOD_Class
+            // 
+            this.dgvDadosFOD_Class.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvDadosFOD_Class.HeaderText = "";
+            this.dgvDadosFOD_Class.Name = "dgvDadosFOD_Class";
+            // 
+            // dgvDadosFOD_FFIRSTOFFERDT
+            // 
+            this.dgvDadosFOD_FFIRSTOFFERDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvDadosFOD_FFIRSTOFFERDT.HeaderText = "FFIRST OFFER DT";
+            this.dgvDadosFOD_FFIRSTOFFERDT.Name = "dgvDadosFOD_FFIRSTOFFERDT";
+            // 
+            // dgvDadosFOD_FMFSTDAT
+            // 
+            this.dgvDadosFOD_FMFSTDAT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvDadosFOD_FMFSTDAT.HeaderText = "FMFSTDAT";
+            this.dgvDadosFOD_FMFSTDAT.Name = "dgvDadosFOD_FMFSTDAT";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn16.HeaderText = "KYCRSP FUNDNO";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn17.HeaderText = "FFUND_NAME";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn18.HeaderText = "";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn19.HeaderText = "FFIRST OFFER DT";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "FMFSTDAT";
+            this.Column1.Name = "Column1";
+            // 
+            // dgvResultadoFOD_Warning
+            // 
+            this.dgvResultadoFOD_Warning.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dgvResultadoFOD_Warning.HeaderText = "Warning";
+            this.dgvResultadoFOD_Warning.Name = "dgvResultadoFOD_Warning";
+            this.dgvResultadoFOD_Warning.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvResultadoFOD_Warning.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgvResultadoFOD_Warning.Visible = false;
+            this.dgvResultadoFOD_Warning.Width = 72;
+            // 
+            // dgvResultadoFOD_Remover
+            // 
+            this.dgvResultadoFOD_Remover.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dgvResultadoFOD_Remover.HeaderText = "Removido";
+            this.dgvResultadoFOD_Remover.Name = "dgvResultadoFOD_Remover";
+            this.dgvResultadoFOD_Remover.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvResultadoFOD_Remover.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgvResultadoFOD_Remover.Width = 80;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn20.HeaderText = "KYCRSP FUNDNO";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn21.HeaderText = "FFUND_NAME";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn22.HeaderText = "";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn23.HeaderText = "FFIRST OFFER DT";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "FMFSTDAT";
+            this.Column2.Name = "Column2";
+            // 
+            // dataGridViewCheckBoxColumn7
+            // 
+            this.dataGridViewCheckBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewCheckBoxColumn7.HeaderText = "Warning";
+            this.dataGridViewCheckBoxColumn7.Name = "dataGridViewCheckBoxColumn7";
+            this.dataGridViewCheckBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewCheckBoxColumn7.Visible = false;
+            this.dataGridViewCheckBoxColumn7.Width = 72;
+            // 
+            // dataGridViewCheckBoxColumn8
+            // 
+            this.dataGridViewCheckBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewCheckBoxColumn8.HeaderText = "Removido";
+            this.dataGridViewCheckBoxColumn8.Name = "dataGridViewCheckBoxColumn8";
+            this.dataGridViewCheckBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewCheckBoxColumn8.Width = 80;
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn24.HeaderText = "KYCRSP FUNDNO";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn25.HeaderText = "FFUND_NAME";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn26.HeaderText = "";
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn27.HeaderText = "FFIRST OFFER DT";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "FMFSTDAT";
+            this.Column3.Name = "Column3";
+            // 
+            // dataGridViewCheckBoxColumn9
+            // 
+            this.dataGridViewCheckBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewCheckBoxColumn9.HeaderText = "Warning";
+            this.dataGridViewCheckBoxColumn9.Name = "dataGridViewCheckBoxColumn9";
+            this.dataGridViewCheckBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewCheckBoxColumn9.Visible = false;
+            this.dataGridViewCheckBoxColumn9.Width = 72;
+            // 
+            // dataGridViewCheckBoxColumn10
+            // 
+            this.dataGridViewCheckBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.dataGridViewCheckBoxColumn10.HeaderText = "Removido";
+            this.dataGridViewCheckBoxColumn10.Name = "dataGridViewCheckBoxColumn10";
+            this.dataGridViewCheckBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewCheckBoxColumn10.Width = 80;
             // 
             // frmPrincipal
             // 
@@ -1169,31 +1201,35 @@
         private System.Windows.Forms.Button btnAnalisarFOD;
         private System.Windows.Forms.Button btnAbrirFicheiroFOD;
         private System.Windows.Forms.DataGridView dgvDadosFOD;
+        private System.Windows.Forms.DataGridView dgvResultadoFOD;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView dgvRemovidoFOD;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.DataGridView dgvResultadoFinalFOD;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvDadosFOD_KYCRSPFUNDNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvDadosFOD_FFUNDNAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvDadosFOD_Class;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvDadosFOD_FFIRSTOFFERDT;
-        private System.Windows.Forms.DataGridView dgvResultadoFOD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvDadosFOD_FMFSTDAT;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dgvResultadoFOD_Warning;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dgvResultadoFOD_Remover;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dgvRemovidoFOD;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn7;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn8;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView dgvResultadoFinalFOD;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn9;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn10;
     }
