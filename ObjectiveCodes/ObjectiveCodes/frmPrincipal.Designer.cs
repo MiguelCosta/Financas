@@ -85,6 +85,11 @@
             this.tbcFirstOfferDate = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvDadosFOD = new System.Windows.Forms.DataGridView();
+            this.dgvDadosFOD_KYCRSPFUNDNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDadosFOD_FFUNDNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDadosFOD_Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDadosFOD_FFIRSTOFFERDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDadosFOD_FMFSTDAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblProgressoFOD = new System.Windows.Forms.Label();
             this.pgbAnaliseFOD = new System.Windows.Forms.ProgressBar();
             this.lblProgressoCountFOD = new System.Windows.Forms.Label();
@@ -93,18 +98,6 @@
             this.btnAbrirFicheiroFOD = new System.Windows.Forms.Button();
             this.tbpResultadoFOD = new System.Windows.Forms.TabPage();
             this.dgvResultadoFOD = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgvRemovidoFOD = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dgvResultadoFinalFOD = new System.Windows.Forms.DataGridView();
-            this.tbcGeral = new System.Windows.Forms.TabControl();
-            this.tbpObjectiveCodes = new System.Windows.Forms.TabPage();
-            this.tbpFirstOfferDate = new System.Windows.Forms.TabPage();
-            this.dgvDadosFOD_KYCRSPFUNDNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDadosFOD_FFUNDNAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDadosFOD_Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDadosFOD_FFIRSTOFFERDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDadosFOD_FMFSTDAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -112,6 +105,8 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvResultadoFOD_Warning = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dgvResultadoFOD_Remover = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvRemovidoFOD = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -119,6 +114,8 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dgvResultadoFinalFOD = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -126,6 +123,13 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn9 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn10 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tbcGeral = new System.Windows.Forms.TabControl();
+            this.tbpObjectiveCodes = new System.Windows.Forms.TabPage();
+            this.tbpFirstOfferDate = new System.Windows.Forms.TabPage();
+            this.tbpParte3 = new System.Windows.Forms.TabPage();
+            this.uscParte31 = new ObjectiveCodes.uscParte3();
+            this.tbpParte4 = new System.Windows.Forms.TabPage();
+            this.uscParte41 = new ObjectiveCodes.uscParte4();
             this.toolStrip1.SuspendLayout();
             this.tbcCSV.SuspendLayout();
             this.tbpDados.SuspendLayout();
@@ -150,6 +154,8 @@
             this.tbcGeral.SuspendLayout();
             this.tbpObjectiveCodes.SuspendLayout();
             this.tbpFirstOfferDate.SuspendLayout();
+            this.tbpParte3.SuspendLayout();
+            this.tbpParte4.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -702,6 +708,36 @@
             this.dgvDadosFOD.Size = new System.Drawing.Size(651, 285);
             this.dgvDadosFOD.TabIndex = 14;
             // 
+            // dgvDadosFOD_KYCRSPFUNDNO
+            // 
+            this.dgvDadosFOD_KYCRSPFUNDNO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvDadosFOD_KYCRSPFUNDNO.HeaderText = "KYCRSP FUNDNO";
+            this.dgvDadosFOD_KYCRSPFUNDNO.Name = "dgvDadosFOD_KYCRSPFUNDNO";
+            // 
+            // dgvDadosFOD_FFUNDNAME
+            // 
+            this.dgvDadosFOD_FFUNDNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvDadosFOD_FFUNDNAME.HeaderText = "FFUND_NAME";
+            this.dgvDadosFOD_FFUNDNAME.Name = "dgvDadosFOD_FFUNDNAME";
+            // 
+            // dgvDadosFOD_Class
+            // 
+            this.dgvDadosFOD_Class.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvDadosFOD_Class.HeaderText = "";
+            this.dgvDadosFOD_Class.Name = "dgvDadosFOD_Class";
+            // 
+            // dgvDadosFOD_FFIRSTOFFERDT
+            // 
+            this.dgvDadosFOD_FFIRSTOFFERDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvDadosFOD_FFIRSTOFFERDT.HeaderText = "FFIRST OFFER DT";
+            this.dgvDadosFOD_FFIRSTOFFERDT.Name = "dgvDadosFOD_FFIRSTOFFERDT";
+            // 
+            // dgvDadosFOD_FMFSTDAT
+            // 
+            this.dgvDadosFOD_FMFSTDAT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvDadosFOD_FMFSTDAT.HeaderText = "FMFSTDAT";
+            this.dgvDadosFOD_FMFSTDAT.Name = "dgvDadosFOD_FMFSTDAT";
+            // 
             // lblProgressoFOD
             // 
             this.lblProgressoFOD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -809,142 +845,6 @@
             this.dgvResultadoFOD.Size = new System.Drawing.Size(654, 342);
             this.dgvResultadoFOD.TabIndex = 15;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.dgvRemovidoFOD);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(663, 354);
-            this.tabPage2.TabIndex = 2;
-            this.tabPage2.Text = "Removido";
-            // 
-            // dgvRemovidoFOD
-            // 
-            this.dgvRemovidoFOD.AllowUserToAddRows = false;
-            this.dgvRemovidoFOD.AllowUserToDeleteRows = false;
-            this.dgvRemovidoFOD.AllowUserToResizeRows = false;
-            this.dgvRemovidoFOD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvRemovidoFOD.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvRemovidoFOD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRemovidoFOD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23,
-            this.Column2,
-            this.dataGridViewCheckBoxColumn7,
-            this.dataGridViewCheckBoxColumn8});
-            this.dgvRemovidoFOD.Location = new System.Drawing.Point(4, 6);
-            this.dgvRemovidoFOD.Name = "dgvRemovidoFOD";
-            this.dgvRemovidoFOD.RowHeadersVisible = false;
-            this.dgvRemovidoFOD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRemovidoFOD.Size = new System.Drawing.Size(654, 342);
-            this.dgvRemovidoFOD.TabIndex = 16;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage3.Controls.Add(this.dgvResultadoFinalFOD);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(663, 354);
-            this.tabPage3.TabIndex = 3;
-            this.tabPage3.Text = "Resultado Final";
-            // 
-            // dgvResultadoFinalFOD
-            // 
-            this.dgvResultadoFinalFOD.AllowUserToAddRows = false;
-            this.dgvResultadoFinalFOD.AllowUserToDeleteRows = false;
-            this.dgvResultadoFinalFOD.AllowUserToResizeRows = false;
-            this.dgvResultadoFinalFOD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvResultadoFinalFOD.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvResultadoFinalFOD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResultadoFinalFOD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25,
-            this.dataGridViewTextBoxColumn26,
-            this.dataGridViewTextBoxColumn27,
-            this.Column3,
-            this.dataGridViewCheckBoxColumn9,
-            this.dataGridViewCheckBoxColumn10});
-            this.dgvResultadoFinalFOD.Location = new System.Drawing.Point(4, 6);
-            this.dgvResultadoFinalFOD.Name = "dgvResultadoFinalFOD";
-            this.dgvResultadoFinalFOD.RowHeadersVisible = false;
-            this.dgvResultadoFinalFOD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvResultadoFinalFOD.Size = new System.Drawing.Size(654, 342);
-            this.dgvResultadoFinalFOD.TabIndex = 17;
-            // 
-            // tbcGeral
-            // 
-            this.tbcGeral.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.tbcGeral.Controls.Add(this.tbpObjectiveCodes);
-            this.tbcGeral.Controls.Add(this.tbpFirstOfferDate);
-            this.tbcGeral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbcGeral.Location = new System.Drawing.Point(0, 25);
-            this.tbcGeral.Name = "tbcGeral";
-            this.tbcGeral.SelectedIndex = 0;
-            this.tbcGeral.Size = new System.Drawing.Size(685, 415);
-            this.tbcGeral.TabIndex = 3;
-            // 
-            // tbpObjectiveCodes
-            // 
-            this.tbpObjectiveCodes.BackColor = System.Drawing.SystemColors.Control;
-            this.tbpObjectiveCodes.Controls.Add(this.tbcCSV);
-            this.tbpObjectiveCodes.Location = new System.Drawing.Point(4, 25);
-            this.tbpObjectiveCodes.Name = "tbpObjectiveCodes";
-            this.tbpObjectiveCodes.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpObjectiveCodes.Size = new System.Drawing.Size(677, 386);
-            this.tbpObjectiveCodes.TabIndex = 0;
-            this.tbpObjectiveCodes.Text = "Objective Codes";
-            // 
-            // tbpFirstOfferDate
-            // 
-            this.tbpFirstOfferDate.BackColor = System.Drawing.SystemColors.Control;
-            this.tbpFirstOfferDate.Controls.Add(this.tbcFirstOfferDate);
-            this.tbpFirstOfferDate.Location = new System.Drawing.Point(4, 25);
-            this.tbpFirstOfferDate.Name = "tbpFirstOfferDate";
-            this.tbpFirstOfferDate.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpFirstOfferDate.Size = new System.Drawing.Size(677, 386);
-            this.tbpFirstOfferDate.TabIndex = 1;
-            this.tbpFirstOfferDate.Text = "First Offer Date";
-            // 
-            // dgvDadosFOD_KYCRSPFUNDNO
-            // 
-            this.dgvDadosFOD_KYCRSPFUNDNO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvDadosFOD_KYCRSPFUNDNO.HeaderText = "KYCRSP FUNDNO";
-            this.dgvDadosFOD_KYCRSPFUNDNO.Name = "dgvDadosFOD_KYCRSPFUNDNO";
-            // 
-            // dgvDadosFOD_FFUNDNAME
-            // 
-            this.dgvDadosFOD_FFUNDNAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvDadosFOD_FFUNDNAME.HeaderText = "FFUND_NAME";
-            this.dgvDadosFOD_FFUNDNAME.Name = "dgvDadosFOD_FFUNDNAME";
-            // 
-            // dgvDadosFOD_Class
-            // 
-            this.dgvDadosFOD_Class.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvDadosFOD_Class.HeaderText = "";
-            this.dgvDadosFOD_Class.Name = "dgvDadosFOD_Class";
-            // 
-            // dgvDadosFOD_FFIRSTOFFERDT
-            // 
-            this.dgvDadosFOD_FFIRSTOFFERDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvDadosFOD_FFIRSTOFFERDT.HeaderText = "FFIRST OFFER DT";
-            this.dgvDadosFOD_FFIRSTOFFERDT.Name = "dgvDadosFOD_FFIRSTOFFERDT";
-            // 
-            // dgvDadosFOD_FMFSTDAT
-            // 
-            this.dgvDadosFOD_FMFSTDAT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvDadosFOD_FMFSTDAT.HeaderText = "FMFSTDAT";
-            this.dgvDadosFOD_FMFSTDAT.Name = "dgvDadosFOD_FMFSTDAT";
-            // 
             // dataGridViewTextBoxColumn16
             // 
             this.dataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -982,7 +882,6 @@
             this.dgvResultadoFOD_Warning.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvResultadoFOD_Warning.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dgvResultadoFOD_Warning.Visible = false;
-            this.dgvResultadoFOD_Warning.Width = 72;
             // 
             // dgvResultadoFOD_Remover
             // 
@@ -992,6 +891,42 @@
             this.dgvResultadoFOD_Remover.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvResultadoFOD_Remover.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dgvResultadoFOD_Remover.Width = 80;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.dgvRemovidoFOD);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(663, 354);
+            this.tabPage2.TabIndex = 2;
+            this.tabPage2.Text = "Removido";
+            // 
+            // dgvRemovidoFOD
+            // 
+            this.dgvRemovidoFOD.AllowUserToAddRows = false;
+            this.dgvRemovidoFOD.AllowUserToDeleteRows = false;
+            this.dgvRemovidoFOD.AllowUserToResizeRows = false;
+            this.dgvRemovidoFOD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvRemovidoFOD.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvRemovidoFOD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRemovidoFOD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23,
+            this.Column2,
+            this.dataGridViewCheckBoxColumn7,
+            this.dataGridViewCheckBoxColumn8});
+            this.dgvRemovidoFOD.Location = new System.Drawing.Point(4, 6);
+            this.dgvRemovidoFOD.Name = "dgvRemovidoFOD";
+            this.dgvRemovidoFOD.RowHeadersVisible = false;
+            this.dgvRemovidoFOD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRemovidoFOD.Size = new System.Drawing.Size(654, 342);
+            this.dgvRemovidoFOD.TabIndex = 16;
             // 
             // dataGridViewTextBoxColumn20
             // 
@@ -1030,7 +965,6 @@
             this.dataGridViewCheckBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCheckBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewCheckBoxColumn7.Visible = false;
-            this.dataGridViewCheckBoxColumn7.Width = 72;
             // 
             // dataGridViewCheckBoxColumn8
             // 
@@ -1040,6 +974,42 @@
             this.dataGridViewCheckBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCheckBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewCheckBoxColumn8.Width = 80;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage3.Controls.Add(this.dgvResultadoFinalFOD);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(663, 354);
+            this.tabPage3.TabIndex = 3;
+            this.tabPage3.Text = "Resultado Final";
+            // 
+            // dgvResultadoFinalFOD
+            // 
+            this.dgvResultadoFinalFOD.AllowUserToAddRows = false;
+            this.dgvResultadoFinalFOD.AllowUserToDeleteRows = false;
+            this.dgvResultadoFinalFOD.AllowUserToResizeRows = false;
+            this.dgvResultadoFinalFOD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvResultadoFinalFOD.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvResultadoFinalFOD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResultadoFinalFOD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25,
+            this.dataGridViewTextBoxColumn26,
+            this.dataGridViewTextBoxColumn27,
+            this.Column3,
+            this.dataGridViewCheckBoxColumn9,
+            this.dataGridViewCheckBoxColumn10});
+            this.dgvResultadoFinalFOD.Location = new System.Drawing.Point(4, 6);
+            this.dgvResultadoFinalFOD.Name = "dgvResultadoFinalFOD";
+            this.dgvResultadoFinalFOD.RowHeadersVisible = false;
+            this.dgvResultadoFinalFOD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvResultadoFinalFOD.Size = new System.Drawing.Size(654, 342);
+            this.dgvResultadoFinalFOD.TabIndex = 17;
             // 
             // dataGridViewTextBoxColumn24
             // 
@@ -1078,7 +1048,6 @@
             this.dataGridViewCheckBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCheckBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewCheckBoxColumn9.Visible = false;
-            this.dataGridViewCheckBoxColumn9.Width = 72;
             // 
             // dataGridViewCheckBoxColumn10
             // 
@@ -1088,6 +1057,80 @@
             this.dataGridViewCheckBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCheckBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewCheckBoxColumn10.Width = 80;
+            // 
+            // tbcGeral
+            // 
+            this.tbcGeral.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tbcGeral.Controls.Add(this.tbpObjectiveCodes);
+            this.tbcGeral.Controls.Add(this.tbpFirstOfferDate);
+            this.tbcGeral.Controls.Add(this.tbpParte3);
+            this.tbcGeral.Controls.Add(this.tbpParte4);
+            this.tbcGeral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbcGeral.Location = new System.Drawing.Point(0, 25);
+            this.tbcGeral.Name = "tbcGeral";
+            this.tbcGeral.SelectedIndex = 0;
+            this.tbcGeral.Size = new System.Drawing.Size(685, 415);
+            this.tbcGeral.TabIndex = 3;
+            // 
+            // tbpObjectiveCodes
+            // 
+            this.tbpObjectiveCodes.BackColor = System.Drawing.SystemColors.Control;
+            this.tbpObjectiveCodes.Controls.Add(this.tbcCSV);
+            this.tbpObjectiveCodes.Location = new System.Drawing.Point(4, 25);
+            this.tbpObjectiveCodes.Name = "tbpObjectiveCodes";
+            this.tbpObjectiveCodes.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpObjectiveCodes.Size = new System.Drawing.Size(677, 386);
+            this.tbpObjectiveCodes.TabIndex = 0;
+            this.tbpObjectiveCodes.Text = "Objective Codes";
+            // 
+            // tbpFirstOfferDate
+            // 
+            this.tbpFirstOfferDate.BackColor = System.Drawing.SystemColors.Control;
+            this.tbpFirstOfferDate.Controls.Add(this.tbcFirstOfferDate);
+            this.tbpFirstOfferDate.Location = new System.Drawing.Point(4, 25);
+            this.tbpFirstOfferDate.Name = "tbpFirstOfferDate";
+            this.tbpFirstOfferDate.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpFirstOfferDate.Size = new System.Drawing.Size(677, 386);
+            this.tbpFirstOfferDate.TabIndex = 1;
+            this.tbpFirstOfferDate.Text = "First Offer Date";
+            // 
+            // tbpParte3
+            // 
+            this.tbpParte3.Controls.Add(this.uscParte31);
+            this.tbpParte3.Location = new System.Drawing.Point(4, 25);
+            this.tbpParte3.Name = "tbpParte3";
+            this.tbpParte3.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpParte3.Size = new System.Drawing.Size(677, 386);
+            this.tbpParte3.TabIndex = 2;
+            this.tbpParte3.Text = "Parte 3";
+            this.tbpParte3.UseVisualStyleBackColor = true;
+            // 
+            // uscParte31
+            // 
+            this.uscParte31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscParte31.Location = new System.Drawing.Point(3, 3);
+            this.uscParte31.Name = "uscParte31";
+            this.uscParte31.Size = new System.Drawing.Size(671, 380);
+            this.uscParte31.TabIndex = 0;
+            // 
+            // tbpParte4
+            // 
+            this.tbpParte4.Controls.Add(this.uscParte41);
+            this.tbpParte4.Location = new System.Drawing.Point(4, 25);
+            this.tbpParte4.Name = "tbpParte4";
+            this.tbpParte4.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpParte4.Size = new System.Drawing.Size(677, 386);
+            this.tbpParte4.TabIndex = 3;
+            this.tbpParte4.Text = "Parte 4";
+            this.tbpParte4.UseVisualStyleBackColor = true;
+            // 
+            // uscParte41
+            // 
+            this.uscParte41.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscParte41.Location = new System.Drawing.Point(3, 3);
+            this.uscParte41.Name = "uscParte41";
+            this.uscParte41.Size = new System.Drawing.Size(671, 380);
+            this.uscParte41.TabIndex = 0;
             // 
             // frmPrincipal
             // 
@@ -1128,6 +1171,8 @@
             this.tbcGeral.ResumeLayout(false);
             this.tbpObjectiveCodes.ResumeLayout(false);
             this.tbpFirstOfferDate.ResumeLayout(false);
+            this.tbpParte3.ResumeLayout(false);
+            this.tbpParte4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1232,6 +1277,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn9;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn10;
+        private System.Windows.Forms.TabPage tbpParte3;
+        private uscParte3 uscParte31;
+        private System.Windows.Forms.TabPage tbpParte4;
+        private uscParte4 uscParte41;
     }
 }
 

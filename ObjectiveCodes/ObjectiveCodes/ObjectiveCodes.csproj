@@ -62,6 +62,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Source\citModeloC.cs" />
+    <Compile Include="Source\citParte4Final.cs" />
+    <Compile Include="Source\citResult.cs" />
+    <Compile Include="uscParte4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uscParte4.Designer.cs">
+      <DependentUpon>uscParte4.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +79,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\citExpenseTurnoverFee.cs" />
+    <Compile Include="Source\citFloadAndRoad.cs" />
+    <Compile Include="Source\citTotalLoadsFload.cs" />
+    <Compile Include="Source\citTotalLoadsRload.cs" />
+    <Compile Include="Source\FuncoesAux.cs" />
+    <Compile Include="uscParte3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uscParte3.Designer.cs">
+      <DependentUpon>uscParte3.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="uscParte4.resx">
+      <DependentUpon>uscParte4.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +106,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="uscParte3.resx">
+      <DependentUpon>uscParte3.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -103,6 +129,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="resources\copy.png" />
     <Content Include="resources\edit_find.png" />
     <Content Include="resources\gnome_edit_clear.png" />
     <Content Include="resources\home.png" />
