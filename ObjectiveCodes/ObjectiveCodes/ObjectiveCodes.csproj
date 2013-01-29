@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="uscParte5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uscParte5.Designer.cs">
+      <DependentUpon>uscParte5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\citModeloC.cs" />
     <Compile Include="Source\citParte4Final.cs" />
     <Compile Include="Source\citResult.cs" />
@@ -90,6 +96,9 @@
     <Compile Include="uscParte3.Designer.cs">
       <DependentUpon>uscParte3.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="uscParte5.resx">
+      <DependentUpon>uscParte5.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uscParte4.resx">
       <DependentUpon>uscParte4.cs</DependentUpon>
     </EmbeddedResource>

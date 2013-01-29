@@ -127,9 +127,11 @@
             this.tbpObjectiveCodes = new System.Windows.Forms.TabPage();
             this.tbpFirstOfferDate = new System.Windows.Forms.TabPage();
             this.tbpParte3 = new System.Windows.Forms.TabPage();
-            this.uscParte31 = new ObjectiveCodes.uscParte3();
             this.tbpParte4 = new System.Windows.Forms.TabPage();
+            this.tbpParte3E4 = new System.Windows.Forms.TabPage();
+            this.uscParte31 = new ObjectiveCodes.uscParte3();
             this.uscParte41 = new ObjectiveCodes.uscParte4();
+            this.uscParte51 = new ObjectiveCodes.uscParte5();
             this.toolStrip1.SuspendLayout();
             this.tbcCSV.SuspendLayout();
             this.tbpDados.SuspendLayout();
@@ -156,6 +158,7 @@
             this.tbpFirstOfferDate.SuspendLayout();
             this.tbpParte3.SuspendLayout();
             this.tbpParte4.SuspendLayout();
+            this.tbpParte3E4.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -882,6 +885,7 @@
             this.dgvResultadoFOD_Warning.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvResultadoFOD_Warning.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dgvResultadoFOD_Warning.Visible = false;
+            this.dgvResultadoFOD_Warning.Width = 72;
             // 
             // dgvResultadoFOD_Remover
             // 
@@ -965,6 +969,7 @@
             this.dataGridViewCheckBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCheckBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewCheckBoxColumn7.Visible = false;
+            this.dataGridViewCheckBoxColumn7.Width = 72;
             // 
             // dataGridViewCheckBoxColumn8
             // 
@@ -1048,6 +1053,7 @@
             this.dataGridViewCheckBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCheckBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewCheckBoxColumn9.Visible = false;
+            this.dataGridViewCheckBoxColumn9.Width = 72;
             // 
             // dataGridViewCheckBoxColumn10
             // 
@@ -1065,6 +1071,7 @@
             this.tbcGeral.Controls.Add(this.tbpFirstOfferDate);
             this.tbcGeral.Controls.Add(this.tbpParte3);
             this.tbcGeral.Controls.Add(this.tbpParte4);
+            this.tbcGeral.Controls.Add(this.tbpParte3E4);
             this.tbcGeral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbcGeral.Location = new System.Drawing.Point(0, 25);
             this.tbcGeral.Name = "tbcGeral";
@@ -1105,14 +1112,6 @@
             this.tbpParte3.Text = "Parte 3";
             this.tbpParte3.UseVisualStyleBackColor = true;
             // 
-            // uscParte31
-            // 
-            this.uscParte31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uscParte31.Location = new System.Drawing.Point(3, 3);
-            this.uscParte31.Name = "uscParte31";
-            this.uscParte31.Size = new System.Drawing.Size(671, 380);
-            this.uscParte31.TabIndex = 0;
-            // 
             // tbpParte4
             // 
             this.tbpParte4.Controls.Add(this.uscParte41);
@@ -1124,6 +1123,25 @@
             this.tbpParte4.Text = "Parte 4";
             this.tbpParte4.UseVisualStyleBackColor = true;
             // 
+            // tbpParte3E4
+            // 
+            this.tbpParte3E4.Controls.Add(this.uscParte51);
+            this.tbpParte3E4.Location = new System.Drawing.Point(4, 25);
+            this.tbpParte3E4.Name = "tbpParte3E4";
+            this.tbpParte3E4.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpParte3E4.Size = new System.Drawing.Size(677, 386);
+            this.tbpParte3E4.TabIndex = 4;
+            this.tbpParte3E4.Text = "Parte 3 e 4";
+            this.tbpParte3E4.UseVisualStyleBackColor = true;
+            // 
+            // uscParte31
+            // 
+            this.uscParte31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscParte31.Location = new System.Drawing.Point(3, 3);
+            this.uscParte31.Name = "uscParte31";
+            this.uscParte31.Size = new System.Drawing.Size(671, 380);
+            this.uscParte31.TabIndex = 0;
+            // 
             // uscParte41
             // 
             this.uscParte41.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1131,6 +1149,14 @@
             this.uscParte41.Name = "uscParte41";
             this.uscParte41.Size = new System.Drawing.Size(671, 380);
             this.uscParte41.TabIndex = 0;
+            // 
+            // uscParte51
+            // 
+            this.uscParte51.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uscParte51.Location = new System.Drawing.Point(3, 3);
+            this.uscParte51.Name = "uscParte51";
+            this.uscParte51.Size = new System.Drawing.Size(671, 380);
+            this.uscParte51.TabIndex = 0;
             // 
             // frmPrincipal
             // 
@@ -1173,6 +1199,7 @@
             this.tbpFirstOfferDate.ResumeLayout(false);
             this.tbpParte3.ResumeLayout(false);
             this.tbpParte4.ResumeLayout(false);
+            this.tbpParte3E4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1281,6 +1308,8 @@
         private uscParte3 uscParte31;
         private System.Windows.Forms.TabPage tbpParte4;
         private uscParte4 uscParte41;
+        private System.Windows.Forms.TabPage tbpParte3E4;
+        private uscParte5 uscParte51;
     }
 }
 

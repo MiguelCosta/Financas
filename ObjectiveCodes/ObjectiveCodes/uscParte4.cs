@@ -39,6 +39,7 @@ namespace ObjectiveCodes
 
                     if (!_fileModeloC.Equals(""))
                     {
+                        _SourceModeloC.Clear();
                         ReadModeloC();
                     }
                 }
@@ -78,29 +79,29 @@ namespace ObjectiveCodes
         {
             int index = -1;
 
+            try {
+                Cursor = Cursors.WaitCursor;
 
-            try
-            {
-
-                foreach (Source.citModeloC modeloC in _SourceModeloC)
-                {
+                _result.Clear();
+                foreach(Source.citModeloC modeloC in _SourceModeloC) {
                     index = -1;
 
-                    index = citResultado.Parte3.FindIndex(r => VerificaEntreDatas(modeloC, r));
+                    index = citResultado.Parte3.FindIndex(r => r.KycrspFundno == modeloC.KYCRSP_FUNDNO && VerificaEntreDatas(modeloC, r));
 
-                    if (index > 0)
-                    {
+                    if(index > 0) {
                         _result.Add(new Source.citParte4Final(modeloC, citResultado.Parte3[index]));
+                    } else {
+                        _result.Add(new Source.citParte4Final(modeloC, null));
                     }
                 }
 
                 dgvParte4Final.DataSource = _result;
 
-            }
-            catch (Exception)
-            {
-                
-                throw;
+            } catch(Exception) {
+
+                MessageBox.Show("Error merge result.");
+            } finally {
+                Cursor = Cursors.Default;
             }
         }
 
@@ -123,51 +124,51 @@ namespace ObjectiveCodes
         {
             try
             {
-                CsvFileWriter file = new CsvFileWriter("C:\\teste.csv");
+                // Displays a SaveFileDialog so the user can save the Image
+                // assigned to Button2.
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "CSV|*.csv";
+                saveFileDialog1.Title = "Guardar como csv...";
+                saveFileDialog1.ShowDialog();
 
-                CsvRow header = new CsvRow();
-                header[0] = dgvModeloC.Columns[0].Name;
-                header[1] = dgvModeloC.Columns[1].Name;
-                header[2] = dgvModeloC.Columns[2].Name;
-                header[3] = dgvModeloC.Columns[3].Name;
-                header[4] = dgvModeloC.Columns[4].Name;
-                header[5] = dgvModeloC.Columns[5].Name;
-                header[6] = dgvModeloC.Columns[6].Name;
-                header[7] = dgvModeloC.Columns[7].Name;
-                header[8] = dgvModeloC.Columns[8].Name;
-                header[9] = dgvModeloC.Columns[9].Name;
-                header[10] = dgvModeloC.Columns[10].Name;
-                header[11] = dgvModeloC.Columns[11].Name;
-                header[12] = dgvModeloC.Columns[12].Name;
-                header[13] = dgvModeloC.Columns[13].Name;
-                header[14] = dgvModeloC.Columns[14].Name;
-                header[15] = dgvModeloC.Columns[15].Name;
-                header[16] = dgvModeloC.Columns[16].Name;
-                header[17] = dgvModeloC.Columns[17].Name;
-                header[18] = dgvModeloC.Columns[18].Name;
-                header[19] = dgvModeloC.Columns[19].Name;
-                header[20] = dgvModeloC.Columns[20].Name;
-                header[21] = dgvModeloC.Columns[21].Name;
-                header[22] = dgvModeloC.Columns[22].Name;
-                header[23] = dgvModeloC.Columns[23].Name;
-                header[24] = dgvModeloC.Columns[24].Name;
-                header[25] = dgvModeloC.Columns[25].Name;
-
-                file.WriteRow(header);
-
-                foreach (Source.citParte4Final item in _result)
+                if (saveFileDialog1.FileName != "")
                 {
-                    file.WriteRow(item.ToCsv());
+                    Cursor = Cursors.WaitCursor;
+
+                    System.IO.FileStream fs = (System.IO.FileStream)saveFileDialog1.OpenFile();
+                    fs.Close();
+
+                    CsvFileWriter file = new CsvFileWriter(saveFileDialog1.FileName);
+
+                    CsvRow header = new CsvRow();
+
+                    foreach (DataGridViewColumn col in dgvParte4Final.Columns)
+                    {
+                        header.Add(col.Name);
+                    }
+
+                    file.WriteRow(header);
+
+                    foreach (Source.citParte4Final item in _result)
+                    {
+                        file.WriteRow(item.ToCsv());
+                    }
+
+                    file.Flush();
+                    file.Close();
+
+                    MessageBox.Show("Ficheiro guardado.");
                 }
-
-
 
 
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Erro\n" + ex.Message);
+            }
+            finally
+            {
+                Cursor = Cursors.Default;
             }
         }
 
