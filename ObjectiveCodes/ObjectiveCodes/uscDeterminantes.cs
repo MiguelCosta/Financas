@@ -91,20 +91,22 @@ namespace ObjectiveCodes {
                     determinante = _SourceDeterminantes[i];
 
                     // se não tiver Front_Load e Reader load é para remover, ou seja, não adiciona ao result
-                    // basta no fundo um dos registos ter para não se apagar
+                    // basta no Fundo um dos registos ter para não se apagar
+                    if(chkManterFundos.Checked == false) {
+                        for(int j = i - 50 ; j < i + 50 ; j++) {
+                            if(j >= 0 && j < count) {
+                                determinante2 = _SourceDeterminantes[j];
+                                if(determinante.KYCRSP_FUNDNO == determinante2.KYCRSP_FUNDNO &&
+                                    (!String.IsNullOrEmpty(determinante2.FRONT_LOAD) ||
+                                    !String.IsNullOrEmpty(determinante2.REAR_LOAD))) {
 
-                    for(int j = i-50 ; j < i+50 ; j++) {
-                        if(j >= 0 && j < count) {
-                            determinante2 = _SourceDeterminantes[j];
-                            if(determinante.KYCRSP_FUNDNO == determinante2.KYCRSP_FUNDNO &&
-                                (!String.IsNullOrEmpty(determinante2.FRONT_LOAD) ||
-                                !String.IsNullOrEmpty(determinante2.REAR_LOAD))) {
-                                
-                                manter = true;
-                                break;
+                                    manter = true;
+                                    break;
+                                }
                             }
                         }
-                    }
+
+                    } else manter = true; // se tiver a opção para manter sempre os fundos não os vai eliminar
 
                     //manter = _SourceDeterminantes.Any(d => d.KYCRSP_FUNDNO == determinante.KYCRSP_FUNDNO && (!String.IsNullOrEmpty(d.FRONT_LOAD) || !String.IsNullOrEmpty(d.REAR_LOAD)));
                     
@@ -136,6 +138,8 @@ namespace ObjectiveCodes {
 
                 MessageBox.Show("Error merge result.");
             } finally {
+                dgvDeterminantes.Refresh();
+                dgvParte6.Refresh();
                 Cursor = Cursors.Default;
             }
         }

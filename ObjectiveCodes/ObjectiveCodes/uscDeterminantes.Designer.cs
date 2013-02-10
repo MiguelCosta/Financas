@@ -34,11 +34,14 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvParte6 = new System.Windows.Forms.DataGridView();
             this.btnAnalisar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnToCSV = new System.Windows.Forms.Button();
+            this.chkManterFundos = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeterminantes)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParte6)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -88,7 +91,7 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.dgvParte6, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.btnAnalisar, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.btnToCSV, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -124,27 +127,48 @@
             this.btnAnalisar.UseVisualStyleBackColor = true;
             this.btnAnalisar.Click += new System.EventHandler(this.btnJuntar_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.chkManterFundos);
+            this.panel1.Controls.Add(this.btnToCSV);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 287);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(657, 24);
+            this.panel1.TabIndex = 4;
+            // 
             // btnToCSV
             // 
-            this.btnToCSV.Location = new System.Drawing.Point(3, 287);
+            this.btnToCSV.Location = new System.Drawing.Point(0, 1);
             this.btnToCSV.Name = "btnToCSV";
             this.btnToCSV.Size = new System.Drawing.Size(75, 23);
-            this.btnToCSV.TabIndex = 4;
+            this.btnToCSV.TabIndex = 5;
             this.btnToCSV.Text = "To CSV";
             this.btnToCSV.UseVisualStyleBackColor = true;
-            this.btnToCSV.Click += new System.EventHandler(this.btnToCSV_Click);
             // 
-            // uscParte6
+            // chkManterFundos
+            // 
+            this.chkManterFundos.AutoSize = true;
+            this.chkManterFundos.Location = new System.Drawing.Point(82, 4);
+            this.chkManterFundos.Name = "chkManterFundos";
+            this.chkManterFundos.Size = new System.Drawing.Size(374, 17);
+            this.chkManterFundos.TabIndex = 6;
+            this.chkManterFundos.Text = "Manter fundos sem FrontLoad e RearLoad, apenas altera valores com -99";
+            this.chkManterFundos.UseVisualStyleBackColor = true;
+            // 
+            // uscDeterminantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Name = "uscParte6";
+            this.Name = "uscDeterminantes";
             this.Size = new System.Drawing.Size(663, 314);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeterminantes)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvParte6)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -157,7 +181,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.DataGridView dgvParte6;
         private System.Windows.Forms.Button btnAnalisar;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnToCSV;
+        private System.Windows.Forms.CheckBox chkManterFundos;
 
     }
 }
